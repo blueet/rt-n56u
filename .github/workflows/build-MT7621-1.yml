@@ -35,7 +35,7 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: "K2P-5.0 JCG-836PRO-5.0 JCG-AC860M-5.0 DIR-878-5.0 DIR-882-5.0 WR1200JS JCG-AC856M-5.0"
+        TNAME: "R2100"
       run: |
         cwd=`pwd`
         CONFIG_TOOLCHAIN_DIR=${cwd//\//\\\/}\\/toolchain-mipsel
@@ -102,7 +102,7 @@ jobs:
         sudo ./build_firmware_modify $m 0
         sudo mv -f images/*.trx /opt/images/
         done
-    - name: Upload binaries to release
+    - name: R2100
       uses: svenstaro/upload-release-action@v1-release
       with:
         repo_token: ${{ secrets.R_TOKEN }}
